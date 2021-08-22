@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import axios from "axios";
+import img1 from "../assets/img1.svg";
 
 /** import from materail ui */
 import {
@@ -62,64 +63,71 @@ function ResetPassword({ classes, token }) {
   };
 
   return (
-    <Paper className={classes.container}>
-      {done ? (
-        <React.Fragment>
-          <DoneOutline className={classes.doneIcon} />
-          <Typography variant="h5" gutterBottom>
-            All done!
-          </Typography>
-        </React.Fragment>
-      ) : (
-        <form
-          className={classes.container}
-          onSubmit={handleSubmit}
-          autoComplete="off"
-        >
-          <Typography variant="h5" gutterBottom>
-            Create a new password
-          </Typography>
-          <TextField
-            id="password"
-            type="password"
-            required
-            error={error}
-            label="New password"
-            className={classes.textField}
-            value={password}
-            onChange={handleChange(setPassword)}
-            margin="normal"
-          />
-          <TextField
-            id="confirmPassword"
-            type="password"
-            required
-            error={error}
-            label="Confirm new password"
-            className={classes.textField}
-            value={confirmPassword}
-            onChange={handleChange(setConfirmPassword)}
-            margin="normal"
-          />
-          {error ? (
-            <Typography className={classes.errorText} variant="subtitle2">
-              Passwords must match!
+    <>
+      <Paper className={classes.container}>
+        {done ? (
+          <React.Fragment>
+            <DoneOutline className={classes.doneIcon} />
+            <Typography variant="h5" gutterBottom>
+              All done!
             </Typography>
-          ) : (
-            <React.Fragment />
-          )}
-          <Button
-            variant="contained"
-            type="submit"
-            color="primary"
-            className={classes.button}
+          </React.Fragment>
+        ) : (
+          <form
+            className={classes.container}
             onSubmit={handleSubmit}
+            autoComplete="off"
           >
-            Create
-          </Button>
-        </form>
-      )}
-    </Paper>
+            <Typography variant="h5" gutterBottom>
+              Create a new password
+            </Typography>
+            <TextField
+              id="password"
+              type="password"
+              required
+              error={error}
+              label="New password"
+              className={classes.textField}
+              value={password}
+              onChange={handleChange(setPassword)}
+              margin="normal"
+            />
+            <TextField
+              id="confirmPassword"
+              type="password"
+              required
+              error={error}
+              label="Confirm new password"
+              className={classes.textField}
+              value={confirmPassword}
+              onChange={handleChange(setConfirmPassword)}
+              margin="normal"
+            />
+            {error ? (
+              <Typography className={classes.errorText} variant="subtitle2">
+                Passwords must match!
+              </Typography>
+            ) : (
+              <React.Fragment />
+            )}
+            <Button
+              variant="contained"
+              type="submit"
+              color="primary"
+              className={classes.button}
+              onSubmit={handleSubmit}
+            >
+              Create
+            </Button>
+          </form>
+        )}
+      </Paper>
+      <img
+        src={img1}
+        alt=" img"
+        style={{ width: "700px", height: "500px" }}
+      ></img>
+    </>
   );
 }
 

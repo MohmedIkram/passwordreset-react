@@ -1,6 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 
+import img2 from "../assets/img2.svg";
 /** import from materail ui */
 import {
   Paper,
@@ -61,55 +62,63 @@ function SendEmail({ classes }) {
   };
 
   return (
-    <Paper className={classes.container}>
-      {done ? (
-        <>
-          <MailOutline className={classes.doneIcon} />
-          <Typography variant="h5" gutterBottom>
-            Check your inbox to proceed
-          </Typography>
-        </>
-      ) : (
-        <form
-          id="emailForm"
-          className={classes.container}
-          onSubmit={handleSubmit}
-          autoComplete
-        >
-          <Typography variant="h5" gutterBottom>
-            Password Reset
-          </Typography>
-          <TextField
-            id="email"
-            label="Email"
-            required
-            error={error}
-            className={classes.textField}
-            value={email}
-            onChange={handleChange}
-            margin="normal"
-          />
-          {error ? (
-            <Typography className={classes.errorText} variant="subtitle2">
-              Invalid address!
+    <>
+      <Paper className={classes.container}>
+        {done ? (
+          <>
+            <MailOutline className={classes.doneIcon} />
+            <Typography variant="h5" gutterBottom>
+              Check your inbox to proceed
             </Typography>
-          ) : (
-            <React.Fragment />
-          )}
-
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            form="emailForm"
-            className={classes.button}
-            onClick={handleSubmit}
+          </>
+        ) : (
+          <form
+            id="emailForm"
+            className={classes.container}
+            onSubmit={handleSubmit}
+            autoComplete
           >
-            Reset
-          </Button>
-        </form>
-      )}
-    </Paper>
+            <Typography variant="h5" gutterBottom>
+              Password Reset
+            </Typography>
+            <TextField
+              id="email"
+              label="Email"
+              required
+              error={error}
+              className={classes.textField}
+              value={email}
+              onChange={handleChange}
+              margin="normal"
+            />
+            {error ? (
+              <Typography className={classes.errorText} variant="subtitle2">
+                Invalid address!
+              </Typography>
+            ) : (
+              <React.Fragment />
+            )}
+
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              form="emailForm"
+              className={classes.button}
+              onClick={handleSubmit}
+            >
+              Reset
+            </Button>
+          </form>
+        )}
+      </Paper>
+
+      <img
+        src={img2}
+        alt=" img"
+        style={{ width: "400px", height: "400px" }}
+      ></img>
+    </>
   );
 }
 
