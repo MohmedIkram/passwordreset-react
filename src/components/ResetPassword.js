@@ -13,6 +13,9 @@ import {
 } from "@material-ui/core";
 import { DoneOutline } from "@material-ui/icons";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const styles = () => ({
   container: {
     padding: "1em",
@@ -56,7 +59,7 @@ function ResetPassword({ classes, token }) {
       const myData = {
         confirmPassword,
       };
-      axios.post(`http://localhost:5000/users/reset-password/${token}`, myData);
+      axios.post(`${process.env.url}/users/reset-password/${token}`, myData);
       console.log(token);
       setDone(true);
     }

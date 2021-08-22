@@ -54,7 +54,10 @@ export default function SignUp() {
       email,
       password,
     };
-    axios.post("http://localhost:5000/users/signup", myData);
+    axios.post(
+      `https://password-reset-guvi.herokuapp.com/users/signup`,
+      myData
+    );
     History.push("/");
   };
 

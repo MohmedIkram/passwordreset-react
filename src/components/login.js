@@ -13,6 +13,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
@@ -53,7 +56,7 @@ export default function LoginPage() {
   //     email,
   //     password,
   //   };
-  //   axios.post("http://localhost:5000/users/login", myData);
+  //   axios.post(`${process.env.url}/users/login`, myData);
   //   // history.push("/Home");
   //   // history.push(`/Home/${token}`);
   //   history.push(`/Home/:token`);
@@ -65,7 +68,7 @@ export default function LoginPage() {
       password,
     };
     axios
-      .post("http://localhost:5000/users/login", myData)
+      .post(`${process.env.url}/users/login`, myData)
       .then((response) => {
         // return  response;
         localStorage.setItem("auth", JSON.stringify(response.data));

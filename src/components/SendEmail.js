@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from "axios";
-
 import img2 from "../assets/img2.svg";
+
 /** import from materail ui */
 import {
   Paper,
@@ -11,6 +11,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import { MailOutline } from "@material-ui/icons";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 const styles = () => ({
   container: {
@@ -57,7 +60,7 @@ function SendEmail({ classes }) {
       const myData = {
         email,
       };
-      axios.post("http://localhost:5000/users/forgot-password", myData);
+      axios.post(`${process.env.url}/users/forgot-password`, myData);
     }
   };
 
