@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import foodimg from "./foodimg.svg";
+import img3 from "../assets/img3.svg";
 
 /** import from materail ui */
 import Button from "@material-ui/core/Button";
@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%",
+    width: "90%",
     marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
   image: {
-    height: "20",
+    height: "10",
     width: "40",
   },
 }));
@@ -82,8 +82,8 @@ export default function LoginPage() {
     <Grid container component="main" className={classes.root}>
       <Grid item xs={false} sm={4} md={7} className={classes.image}>
         <img
-          src={foodimg}
-          alt="bookmy show img"
+          src={img3}
+          alt="login img"
           style={{ height: "20", width: "40" }}
         ></img>
       </Grid>
