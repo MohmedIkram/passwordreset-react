@@ -60,7 +60,10 @@ function SendEmail({ classes }) {
       const myData = {
         email,
       };
-      axios.post(`${process.env.url}/users/forgot-password`, myData);
+      axios.post(
+        `https://password-reset-guvi.herokuapp.com/users/forgot-password`,
+        myData
+      );
     }
   };
 
