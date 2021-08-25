@@ -12,9 +12,6 @@ import {
 } from "@material-ui/core";
 import { MailOutline } from "@material-ui/icons";
 
-import dotenv from "dotenv";
-dotenv.config();
-
 const styles = () => ({
   container: {
     padding: "1em",
